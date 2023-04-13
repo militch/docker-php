@@ -79,6 +79,7 @@ RUN set -eux; \
     --with-config-file-path=$PHPCONFIG_DIR \
     --mandir=$PREFIX/man \
     --disable-cgi \
+    --disable-phpdbg \
     --without-pdo-sqlite \
     --without-sqlite3 \
     --enable-fpm \
@@ -100,10 +101,10 @@ RUN set -eux; \
     --with-jpeg \
     --enable-redis \
     --enable-intl \
-    --disable-phpdbg \
     --enable-mbregex \
     --with-pdo-mysql \
     --with-openssl \
+    --enable-sockets \
     --enable-mbstring \
     --with-mhash \
     --with-readline \
@@ -116,8 +117,7 @@ RUN set -eux; \
 RUN set -eux; \
     cd "$PHPCONFIG_DIR"; \
     cp php-fpm.conf.default php-fpm.conf; \
-    cp php-fpm.d/www.conf.default php-fpm.d/www.conf \
-    ; \
+    cp php-fpm.d/www.conf.default php-fpm.d/www.conf; \
     { \
 		echo '[global]'; \
 		echo 'error_log = /proc/self/fd/2'; \
