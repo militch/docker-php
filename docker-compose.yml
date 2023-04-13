@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  php-fpm:
+    ports:
+      - "9001:9000"
+    build:
+      context: .
+      args: 
+        - "CNBUILD="
+    volumes:
+      - "/var/www/html:/var/www/html"
+
+  php-fpm2:
+    image: php:7.4-fpm
+    ports:
+      - "9000:9000"
+    volumes:
+      - "/var/www/html:/var/www/html"
+

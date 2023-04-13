@@ -8,8 +8,12 @@ RUN set -eux; \
     fi
 
 RUN set -eux; \
-    apk add --no-cache --virtual .system-deps \
+    apk add --no-cache --virtual .runtime-deps \
+        ca-certificates \
+        tar \
+        xz \
         bash \
+        openssl \
         curl \
     ;
 
@@ -39,7 +43,7 @@ RUN set -eux; \
 
 ENV PHP_URL="https://www.php.net/distributions/php-8.2.4.tar.gz"
 ENV GITHUB_HOST="https://github.com"
-ENV PREFIX="/usr/local"
+ENV PHP_PREFIX="/usr/local"
 ENV PHPCONFIG_DIR="/etc/php"
 ENV PHP_SRC_DIR="/usr/local/src/php"
 
@@ -48,6 +52,13 @@ RUN chmod +x /usr/local/bin/download_github_by_tag.sh
 
 RUN set -eux; \
 	adduser -u 82 -D -S -G www-data www-data
+
+RUN set -eux; \
+	mkdir -p "$PHPCONFIG_DIR/conf.d"; \
+	[ ! -d /var/www/html ]; \
+	mkdir -p /var/www/html; \
+	chown www-data:www-data /var/www/html; \
+	chmod 1777 /var/www/html
 
 # download php source
 RUN set -eux; \
@@ -68,16 +79,18 @@ RUN set -eux; \
 RUN set -eux; \
     cd ${PHP_SRC_DIR}; \
     rm configure && ./buildconf --force; \
-    ./configure --prefix=$PREFIX \
-    --bindir=$PREFIX/bin \
-    --libdir=$PREFIX/lib \
-    --sbindir=$PREFIX/sbin \
-    --includedir=$PREFIX/include \
-    --sysconfdir=$PHPCONFIG_DIR \
+    ./configure \
+    --prefix=$PHP_PREFIX \
+    --bindir=$PHP_PREFIX/bin \
+    --libdir=$PHP_PREFIX/lib \
+    --sbindir=$PHP_PREFIX/sbin \
+    --includedir=$PHP_PREFIX/include \
+    --mandir=$PHP_PREFIX/man \
     --localstatedir=/var \
     --runstatedir=/var/run \
+    --sysconfdir=$PHPCONFIG_DIR \
     --with-config-file-path=$PHPCONFIG_DIR \
-    --mandir=$PREFIX/man \
+    --with-config-file-scan-dir="$PHPCONFIG_DIR/conf.d" \
     --disable-cgi \
     --disable-phpdbg \
     --without-pdo-sqlite \
@@ -111,15 +124,16 @@ RUN set -eux; \
     ; \
     make -j $(nproc) && make install; \
     php --version; \
-    cp php.ini-production "${PHPCONFIG_DIR}/php.ini"; \
+    cp -v php.ini-* "$PHPCONFIG_DIR/"; \
     rm -rf "$PHP_SRC_DIR";
 
 RUN set -eux; \
     cd "$PHPCONFIG_DIR"; \
-    cp php-fpm.conf.default php-fpm.conf; \
-    cp php-fpm.d/www.conf.default php-fpm.d/www.conf; \
+    sed 's!=NONE/!=\/!g' php-fpm.conf.default | tee php-fpm.conf > /dev/null; \
+	cp php-fpm.d/www.conf.default php-fpm.d/www.conf; \
     { \
 		echo '[global]'; \
+        echo 'log_limit = 8192'; \
 		echo 'error_log = /proc/self/fd/2'; \
 		echo; \
 		echo '[www]'; \
@@ -129,11 +143,27 @@ RUN set -eux; \
 		echo; \
 		echo 'catch_workers_output = yes'; \
 		echo 'decorate_workers_output = no'; \
-	} | tee php-fpm.d/docker.conf;
+	} | tee php-fpm.d/docker.conf; \
+    { \
+		echo '[global]'; \
+		echo 'daemonize = no'; \
+		echo; \
+		echo '[www]'; \
+		echo 'listen = 9000'; \
+	} | tee php-fpm.d/zz-docker.conf; \
+    mkdir -p "$PHPCONFIG_DIR/conf.d"; \
+	{ \
+		echo 'fastcgi.logging = Off'; \
+	} > "$PHPCONFIG_DIR/conf.d/docker-fpm.ini"
 
 COPY docker_php_entrypoint.sh /usr/local/bin
 RUN chmod +x /usr/local/bin/docker_php_entrypoint.sh
 ENTRYPOINT ["docker_php_entrypoint.sh"]
 
+STOPSIGNAL SIGQUIT
 EXPOSE 9000
-CMD ["php-fpm", "-F"]
+
+WORKDIR /var/www/html
+
+CMD ["php-fpm", "-c /etc/php/php-fpm.conf"]
+
