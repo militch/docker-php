@@ -1,20 +1,27 @@
 FROM alpine:3.14
 
+ARG CNBUILD="0"
+
 RUN set -eux; \
-    apk add --no-cache \
+    if [ -z "$CNBUILD" ]; then \
+    sed -i 's/dl-cdn.alpinelinux.org/mirrors.tuna.tsinghua.edu.cn/g' /etc/apk/repositories; \
+    fi
+
+RUN set -eux; \
+    apk add --no-cache --virtual .system-deps \
         bash \
         curl \
     ;
 
 RUN set -eux; \
-    apk add --no-cache \
+    apk add --no-cache --virtual .build-base \
         autoconf \
         build-base \
         pkgconfig \
     ;
 
 RUN set -eux; \
-    apk add --no-cache \
+    apk add --no-cache --virtual .build-deps \
         openssl-dev \
         libpng-dev \
         jpeg-dev \
@@ -60,8 +67,7 @@ RUN set -eux; \
 
 RUN set -eux; \
     cd ${PHP_SRC_DIR}; \
-    rm configure; \
-    ./buildconf --force; \
+    rm configure && ./buildconf --force; \
     ./configure --prefix=$PREFIX \
     --bindir=$PREFIX/bin \
     --libdir=$PREFIX/lib \
@@ -102,11 +108,10 @@ RUN set -eux; \
     --with-mhash \
     --with-readline \
     ; \
-    make && make install; \
+    make -j $(nproc) && make install; \
     php --version; \
     cp php.ini-production "${PHPCONFIG_DIR}/php.ini"; \
-    rm -rf "$PHP_SRC_DIR" \
-    ; 
+    rm -rf "$PHP_SRC_DIR";
 
 RUN set -eux; \
     cd "$PHPCONFIG_DIR"; \
@@ -124,5 +129,11 @@ RUN set -eux; \
 		echo; \
 		echo 'catch_workers_output = yes'; \
 		echo 'decorate_workers_output = no'; \
-	} | tee php-fpm.d/docker.conf; \
+	} | tee php-fpm.d/docker.conf;
 
+COPY docker_php_entrypoint.sh /usr/local/bin
+RUN chmod +x /usr/local/bin/docker_php_entrypoint.sh
+ENTRYPOINT ["docker_php_entrypoint.sh"]
+
+EXPOSE 9000
+CMD ["php-fpm", "-F"]
