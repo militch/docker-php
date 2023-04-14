@@ -1,0 +1,822 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: Restoration\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2021-05-19 21:02+0300\n"
+"PO-Revision-Date: 2018-04-09 22:44+0300\n"
+"Last-Translator: Ant Ekşiler <anteksiler@gmail.com>\n"
+"Language-Team: Fuel Themes <support@fuelthemes.net>\n"
+"Language: en_US\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-KeywordsList: _e;__;esc_html_e;esc_html__;esc_attr__;esc_attr_e;esc_html_x;"
+"_x;_nx\n"
+"X-Poedit-Basepath: ../..\n"
+"X-Generator: Poedit 2.1.1\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: admin\n"
+"X-Poedit-SearchPathExcluded-1: assets\n"
+"X-Poedit-SearchPathExcluded-2: node_modules\n"
+"X-Poedit-SearchPathExcluded-3: inc/admin\n"
+"X-Poedit-SearchPathExcluded-4: vendor\n"
+"X-Poedit-SearchPathExcluded-5: inc/gutenberg/node_modules\n"
+
+#: 404.php:18
+msgid "Page not found"
+msgstr ""
+
+#: 404.php:20
+msgid ""
+"The page you were looking for doesnt exist. You may have mistyped the address or the "
+"page may have moved."
+msgstr ""
+
+#: 404.php:22
+msgid "Back to Home"
+msgstr ""
+
+#: comments.php:22
+#, php-format
+msgid "%1$s Comment for"
+msgstr ""
+
+#: comments.php:49
+msgid "Comments are closed"
+msgstr ""
+
+#: comments.php:63
+msgid "E-mail"
+msgstr ""
+
+#: comments.php:64
+msgid "Website"
+msgstr ""
+
+#: comments.php:67
+msgid "Comment"
+msgstr ""
+
+#: comments.php:71
+#, php-format
+msgid "You must be <a href=\"%s\">logged in</a> to post a comment."
+msgstr ""
+
+#: comments.php:84
+#, php-format
+msgid ""
+"Logged in as <a href=\"%1$s\">%2$s</a>. <a href=\"%3$s\" title=\"Log out of this "
+"account\">Log out?</a>"
+msgstr ""
+
+#: comments.php:96
+msgid "Your email address will not be published."
+msgstr ""
+
+#: comments.php:100
+msgid "Leave a Reply"
+msgstr ""
+
+#: comments.php:102
+#, php-format
+msgid "Leave a Reply to %s"
+msgstr ""
+
+#: comments.php:105
+msgid "Cancel reply"
+msgstr ""
+
+#: comments.php:107
+msgid "Submit Comment"
+msgstr ""
+
+#: inc/framework/kirki/article.php:6
+msgid "Article"
+msgstr ""
+
+#: inc/framework/kirki/article.php:7
+msgid "Article Settings"
+msgstr ""
+
+#: inc/framework/kirki/article.php:17
+msgid "Author Name"
+msgstr ""
+
+#: inc/framework/kirki/article.php:28
+msgid "Article Date"
+msgstr ""
+
+#: inc/framework/kirki/article.php:38
+msgid "Article Category"
+msgstr ""
+
+#: inc/framework/kirki/article.php:48
+msgid "Article Navigation"
+msgstr ""
+
+#: inc/framework/kirki/article.php:58
+msgid "Article Tags"
+msgstr ""
+
+#: inc/framework/kirki/backgrounds.php:6
+msgid "Backgrounds"
+msgstr ""
+
+#: inc/framework/kirki/backgrounds.php:7
+msgid "Background settings"
+msgstr ""
+
+#: inc/framework/kirki/backgrounds.php:16
+msgid "Sub-Header Background"
+msgstr ""
+
+#: inc/framework/kirki/backgrounds.php:30
+msgid "Header Background"
+msgstr ""
+
+#: inc/framework/kirki/backgrounds.php:44
+msgid "Footer Background"
+msgstr ""
+
+#: inc/framework/kirki/backgrounds.php:58
+msgid "Sub-Footer Background"
+msgstr ""
+
+#: inc/framework/kirki/blog.php:6
+msgid "Blog"
+msgstr ""
+
+#: inc/framework/kirki/blog.php:7
+msgid "Blog Settings"
+msgstr ""
+
+#: inc/framework/kirki/blog.php:17
+msgid "Post Date"
+msgstr ""
+
+#: inc/framework/kirki/blog.php:28
+msgid "Post Excerpt"
+msgstr ""
+
+#: inc/framework/kirki/blog.php:38
+msgid "Post Category"
+msgstr ""
+
+#: inc/framework/kirki/colors.php:6
+msgid "Color"
+msgstr ""
+
+#: inc/framework/kirki/colors.php:7
+msgid "Color Settings"
+msgstr ""
+
+#: inc/framework/kirki/colors.php:17
+msgid "Accent Color"
+msgstr ""
+
+#: inc/framework/kirki/footer.php:6
+msgid "Footer"
+msgstr ""
+
+#: inc/framework/kirki/footer.php:7
+msgid "Footer Settings"
+msgstr ""
+
+#: inc/framework/kirki/footer.php:17
+msgid "Display Footer?"
+msgstr ""
+
+#: inc/framework/kirki/footer.php:26
+msgid "Footer Columns"
+msgstr ""
+
+#: inc/framework/kirki/header-secondary.php:5
+msgid "Header - Secondary Area"
+msgstr ""
+
+#: inc/framework/kirki/header-secondary.php:6
+msgid "Header - Secondary Area Settings"
+msgstr ""
+
+#: inc/framework/kirki/header-secondary.php:16 inc/framework/kirki/mobilemenu.php:16
+msgid "Display Search?"
+msgstr ""
+
+#: inc/framework/kirki/header-secondary.php:26
+msgid "Display Secondary Menu?"
+msgstr ""
+
+#: inc/framework/kirki/header-secondary.php:35
+msgid "After Cart Text"
+msgstr ""
+
+#: inc/framework/kirki/header-secondary.php:36
+msgid ""
+"This content appears at the bottom of the cart. You can use your shortcodes here."
+msgstr ""
+
+#: inc/framework/kirki/header.php:5
+msgid "Header"
+msgstr ""
+
+#: inc/framework/kirki/header.php:6
+msgid "Header Section Settings"
+msgstr ""
+
+#: inc/framework/kirki/header.php:15
+msgid "Full Width Header?"
+msgstr ""
+
+#: inc/framework/kirki/header.php:24
+msgid "Logo Height"
+msgstr ""
+
+#: inc/framework/kirki/header.php:34
+msgid "Logo Height - Mobile"
+msgstr ""
+
+#: inc/framework/kirki/header.php:44
+msgid "Fixed Header - Shadow"
+msgstr ""
+
+#: inc/framework/kirki/init.php:139 inc/gutenberg-patterns.php:232
+#: inc/woocommerce/woocommerce-product-data-tabs.php:21
+msgid "Restoration"
+msgstr ""
+
+#: inc/framework/kirki/init.php:140
+msgid "Restoration Theme Settings"
+msgstr ""
+
+#: inc/framework/kirki/mobilemenu.php:6
+msgid "Mobile Menu"
+msgstr ""
+
+#: inc/framework/kirki/mobilemenu.php:7
+msgid "Mobile Menu Settings"
+msgstr ""
+
+#: inc/framework/kirki/mobilemenu.php:25
+msgid "Mobile Menu Footer Content"
+msgstr ""
+
+#: inc/framework/kirki/shop.php:6
+msgid "Shop"
+msgstr ""
+
+#: inc/framework/kirki/shop.php:7
+msgid "Shop Settings"
+msgstr ""
+
+#: inc/framework/kirki/shop.php:16
+msgid "Show Hover Image?"
+msgstr ""
+
+#: inc/framework/kirki/shop.php:17
+msgid ""
+"When enabled, products will show a second image on hover. Does not work on Gutenberg "
+"elements."
+msgstr ""
+
+#: inc/framework/kirki/shop.php:26
+msgid "Shop Description"
+msgstr ""
+
+#: inc/framework/kirki/shop.php:27
+msgid "Displays on main shop page, similar to product category descriptions."
+msgstr ""
+
+#: inc/framework/kirki/shop.php:37
+msgid "Single Product Ajax"
+msgstr ""
+
+#: inc/framework/kirki/shop.php:38
+msgid "When enabled, add to cart functionality will use AJAX on single product pages."
+msgstr ""
+
+#: inc/framework/kirki/subfooter.php:6
+msgid "Sub-Footer"
+msgstr ""
+
+#: inc/framework/kirki/subfooter.php:7
+msgid "Sub-Footer Settings"
+msgstr ""
+
+#: inc/framework/kirki/subfooter.php:16
+msgid "Display Sub-Footer?"
+msgstr ""
+
+#: inc/framework/kirki/subfooter.php:25
+msgid "Copyright Text"
+msgstr ""
+
+#: inc/framework/kirki/subfooter.php:34
+msgid "Payment Icons"
+msgstr ""
+
+#: inc/framework/kirki/subfooter.php:37 inc/framework/kirki/subfooter.php:44
+msgid "Payment Icon"
+msgstr ""
+
+#: inc/framework/kirki/subfooter.php:39
+msgid "Add New Payment Icon"
+msgstr ""
+
+#: inc/framework/kirki/subfooter.php:46
+msgid "Select an option..."
+msgstr ""
+
+#: inc/framework/kirki/subheader.php:5
+msgid "Sub-Header"
+msgstr ""
+
+#: inc/framework/kirki/subheader.php:6
+msgid "Sub-Header Settings"
+msgstr ""
+
+#: inc/framework/kirki/subheader.php:16
+msgid "Display Sub-Header?"
+msgstr ""
+
+#: inc/framework/kirki/subheader.php:26
+msgid "Sub-Header Text"
+msgstr ""
+
+#: inc/framework/kirki/typography.php:5
+msgid "Typography"
+msgstr ""
+
+#: inc/framework/kirki/typography.php:6
+msgid "Typography Settings"
+msgstr ""
+
+#: inc/framework/kirki/typography.php:16
+msgid "Primary Font"
+msgstr ""
+
+#: inc/framework/kirki/typography.php:17
+msgid "Changes primarily heading tags"
+msgstr ""
+
+#: inc/framework/kirki/typography.php:38
+msgid "Secondary Font"
+msgstr ""
+
+#: inc/framework/kirki/typography.php:39
+msgid "Changes primarily body text"
+msgstr ""
+
+#: inc/framework/thb-breadcrumbs.php:264
+msgid "Browse:"
+msgstr ""
+
+#: inc/framework/thb-breadcrumbs.php:266
+msgid "Home"
+msgstr ""
+
+#: inc/framework/thb-breadcrumbs.php:267
+msgid "404 Not Found"
+msgstr ""
+
+#: inc/framework/thb-breadcrumbs.php:268
+msgid "Archives"
+msgstr ""
+
+#: inc/framework/thb-breadcrumbs.php:270
+#, php-format
+msgid "Search results for: %s"
+msgstr ""
+
+#: inc/framework/thb-breadcrumbs.php:272
+#, php-format
+msgid "Page %s"
+msgstr ""
+
+#: inc/framework/thb-breadcrumbs.php:274
+#, php-format
+msgid "Comment Page %s"
+msgstr ""
+
+#: inc/framework/thb-breadcrumbs.php:276
+#, php-format
+msgid "Minute %s"
+msgstr ""
+
+#: inc/framework/thb-breadcrumbs.php:278
+#, php-format
+msgid "Week %s"
+msgstr ""
+
+#: inc/framework/thb-breadcrumbs.php:737
+msgid "g:i a"
+msgstr ""
+
+#: inc/framework/thb-breadcrumbs.php:755
+msgid "i"
+msgstr ""
+
+#: inc/framework/thb-breadcrumbs.php:773
+msgid "g a"
+msgstr ""
+
+#: inc/framework/thb-breadcrumbs.php:790 inc/framework/thb-breadcrumbs.php:820
+#: inc/framework/thb-breadcrumbs.php:860 inc/framework/thb-breadcrumbs.php:888
+#: inc/framework/thb-breadcrumbs.php:1239
+msgid "Y"
+msgstr ""
+
+#: inc/framework/thb-breadcrumbs.php:791 inc/framework/thb-breadcrumbs.php:861
+#: inc/framework/thb-breadcrumbs.php:1241
+msgid "F"
+msgstr ""
+
+#: inc/framework/thb-breadcrumbs.php:792 inc/framework/thb-breadcrumbs.php:1243
+msgid "j"
+msgstr ""
+
+#: inc/framework/thb-breadcrumbs.php:821
+msgid "W"
+msgstr ""
+
+#: inc/gutenberg-patterns.php:22
+msgid "Homepage"
+msgstr ""
+
+#: inc/gutenberg-patterns.php:138
+msgid "About Page"
+msgstr ""
+
+#: inc/gutenberg-patterns.php:198
+msgid "Contact Page"
+msgstr ""
+
+#: inc/gutenberg/classes/class-api.php:84 inc/gutenberg/classes/class-api.php:102
+#: inc/gutenberg/classes/class-api.php:120 inc/gutenberg/classes/class-api.php:138
+#: inc/gutenberg/classes/class-categories.php:26
+#: inc/gutenberg/classes/class-product-list.php:26
+#: inc/gutenberg/classes/class-products.php:26
+msgid "Woocommerce Required"
+msgstr ""
+
+#: inc/gutenberg/classes/class-products.php:166
+#, php-format
+msgid "Rated %s out of 5"
+msgstr ""
+
+#: inc/gutenberg/classes/class-products.php:168
+msgid "out of 5"
+msgstr ""
+
+#: inc/gutenberg/dist/blocks.build.js:1
+#: inc/gutenberg/src/thb-woocommerce-category/block.js:32
+#: inc/gutenberg/src/thb-woocommerce-category/edit.js:207
+msgid "WooCommerce Category Grid"
+msgstr ""
+
+#: inc/gutenberg/dist/blocks.build.js:1
+#: inc/gutenberg/src/thb-woocommerce-category/block.js:36
+msgid "woocommerce"
+msgstr ""
+
+#: inc/gutenberg/dist/blocks.build.js:1
+#: inc/gutenberg/src/thb-woocommerce-category/block.js:37
+msgid "category"
+msgstr ""
+
+#: inc/gutenberg/dist/blocks.build.js:1 inc/gutenberg/src/thb-iconbox/block.js:38
+#: inc/gutenberg/src/thb-woocommerce-category/block.js:38
+msgid "fuel"
+msgstr ""
+
+#: inc/gutenberg/dist/blocks.build.js:1
+#: inc/gutenberg/src/thb-woocommerce-category/edit.js:208
+msgid "Please select WooCommerce Categories"
+msgstr ""
+
+#: inc/gutenberg/dist/blocks.build.js:1
+#: inc/gutenberg/src/thb-woocommerce-category/edit.js:228
+msgid "Categories"
+msgstr ""
+
+#: inc/gutenberg/dist/blocks.build.js:1
+#: inc/gutenberg/src/thb-woocommerce-category/edit.js:254
+msgid "Settings"
+msgstr ""
+
+#: inc/gutenberg/dist/blocks.build.js:1 inc/gutenberg/src/thb-iconbox/block.js:32
+msgid "Icon Box"
+msgstr ""
+
+#: inc/gutenberg/dist/blocks.build.js:1 inc/gutenberg/src/thb-iconbox/block.js:36
+msgid "iconbox"
+msgstr ""
+
+#: inc/gutenberg/dist/blocks.build.js:1 inc/gutenberg/src/thb-iconbox/block.js:37
+msgid "icon"
+msgstr ""
+
+#: inc/gutenberg/dist/blocks.build.js:1 inc/gutenberg/src/thb-iconbox/edit.js:110
+msgid "Title"
+msgstr ""
+
+#: inc/gutenberg/dist/blocks.build.js:1 inc/gutenberg/src/thb-iconbox/edit.js:117
+msgid "Subtitle"
+msgstr ""
+
+#: inc/gutenberg/src/init.php:166
+msgid "Please install & activate WooCommerce"
+msgstr ""
+
+#: inc/gutenberg/src/init.php:175
+msgid "Please assign WooCommerce categories"
+msgstr ""
+
+#: inc/gutenberg/src/init.php:234
+msgid "Fuel Themes Blocks"
+msgstr ""
+
+#: inc/header-related.php:127 searchform.php:13 searchform.php:14
+msgid "Search"
+msgstr ""
+
+#: inc/header-related.php:141
+msgid "Cart"
+msgstr ""
+
+#: inc/misc.php:104
+msgid "This is a protected area. Please enter your password:"
+msgstr ""
+
+#: inc/misc.php:105 woocommerce/myaccount/form-login.php:51
+#: woocommerce/myaccount/form-login.php:96
+msgid "Password"
+msgstr ""
+
+#: inc/misc.php:105
+msgid "Submit"
+msgstr ""
+
+#: inc/misc.php:162
+#, php-format
+msgid "Search Results for: %s"
+msgstr ""
+
+#: inc/misc.php:166
+#, php-format
+msgid "Author Archives: %s"
+msgstr ""
+
+#: inc/misc.php:170
+#, php-format
+msgid "Daily Archives: %s"
+msgstr ""
+
+#: inc/misc.php:174
+#, php-format
+msgid "Monthly Archives: %s"
+msgstr ""
+
+#: inc/misc.php:178
+#, php-format
+msgid "Yearly Archives: %s"
+msgstr ""
+
+#: inc/misc.php:181
+msgid "Latest News"
+msgstr ""
+
+#: inc/post-related.php:18
+msgid "in"
+msgstr ""
+
+#: inc/post-related.php:35
+msgid "by"
+msgstr ""
+
+#: inc/post-related.php:41
+msgid "on"
+msgstr ""
+
+#: inc/script-calls.php:83
+msgid "%curr% of %total%"
+msgstr ""
+
+#: inc/script-calls.php:84
+msgid "of"
+msgstr ""
+
+#: inc/script-calls.php:85
+msgid "Loading"
+msgstr ""
+
+#: inc/script-calls.php:86
+msgid "Loading..."
+msgstr ""
+
+#: inc/script-calls.php:87
+msgid "No More Posts"
+msgstr ""
+
+#: inc/script-calls.php:88
+msgid "All Products Loaded"
+msgstr ""
+
+#: inc/script-calls.php:89
+msgid "Load More"
+msgstr ""
+
+#: inc/script-calls.php:90
+msgid "Adding to Cart"
+msgstr ""
+
+#: inc/script-calls.php:91
+msgid "Added To Cart"
+msgstr ""
+
+#: inc/script-calls.php:92
+msgid "has been added to your cart."
+msgstr ""
+
+#: inc/script-calls.php:93 inc/woocommerce/woocommerce-general.php:94 index.php:31
+msgid "Prev"
+msgstr ""
+
+#: inc/script-calls.php:94 inc/templates/post-detail-bits/post-nav.php:30
+#: inc/woocommerce/woocommerce-general.php:95 index.php:32
+msgid "Next"
+msgstr ""
+
+#: inc/templates/footer/footer-style1.php:18
+msgid ""
+"Please Install Kirki Customizer Framework to access Footer Options inside Appearance "
+"> Customize"
+msgstr ""
+
+#: inc/templates/header/mobile-menu-style1.php:17
+msgid "Menu"
+msgstr ""
+
+#: inc/templates/header/mobile-menu-style1.php:18
+#: inc/woocommerce/woocommerce-filterbar.php:22
+msgid "Close"
+msgstr ""
+
+#: inc/templates/post-detail-bits/post-nav.php:24
+msgid "Previous"
+msgstr ""
+
+#: inc/templates/post-styles/post-style1.php:42
+msgid "Read More"
+msgstr ""
+
+#: inc/woocommerce/woocommerce-cart.php:22
+msgid "Shopping Cart"
+msgstr ""
+
+#: inc/woocommerce/woocommerce-filterbar.php:21
+#: inc/woocommerce/woocommerce-filterbar.php:100
+msgid "Filter"
+msgstr ""
+
+#: inc/woocommerce/woocommerce-misc.php:48
+msgid "Add To Wishlist"
+msgstr ""
+
+#: inc/woocommerce/woocommerce-misc.php:57
+msgid "View Wishlist"
+msgstr ""
+
+#: inc/woocommerce/woocommerce-misc.php:80
+msgid "View cart"
+msgstr ""
+
+#: inc/woocommerce/woocommerce-product-data-tabs.php:40
+msgid "Opens the video in lightbox. Accepts youtube, video and mp4 urls."
+msgstr ""
+
+#: inc/woocommerce/woocommerce-single.php:21
+msgid "Zoom"
+msgstr ""
+
+#: inc/woocommerce/woocommerce-single.php:35
+msgid "View Video"
+msgstr ""
+
+#: inc/woocommerce/woocommerce-single.php:69
+msgid "Previous Product"
+msgstr ""
+
+#: inc/woocommerce/woocommerce-single.php:78
+msgid "Next Product"
+msgstr ""
+
+#: woocommerce/cart/cart-shipping.php:55
+#, php-format
+msgid "Shipping to %s."
+msgstr ""
+
+#: woocommerce/cart/cart-shipping.php:56
+msgid "Change address"
+msgstr ""
+
+#: woocommerce/cart/cart-shipping.php:58
+msgid "Shipping options will be updated during checkout."
+msgstr ""
+
+#: woocommerce/cart/cart-shipping.php:66
+msgid "Shipping costs are calculated during checkout."
+msgstr ""
+
+#: woocommerce/cart/cart-shipping.php:68
+msgid "Enter your address to view shipping options."
+msgstr ""
+
+#: woocommerce/cart/cart-shipping.php:71
+msgid ""
+"There are no shipping options available. Please ensure that your address has been "
+"entered correctly, or contact us if you need any help."
+msgstr ""
+
+#: woocommerce/cart/cart-shipping.php:74
+#, php-format
+msgid "No shipping options were found for %s."
+msgstr ""
+
+#: woocommerce/cart/cart-shipping.php:75
+msgid "Enter a different address"
+msgstr ""
+
+#: woocommerce/checkout/form-coupon.php:26
+msgid "Have a coupon?"
+msgstr ""
+
+#: woocommerce/checkout/form-coupon.php:26
+msgid "Click here to enter your code"
+msgstr ""
+
+#: woocommerce/checkout/form-coupon.php:31
+msgid "If you have a coupon code, please apply it below."
+msgstr ""
+
+#: woocommerce/checkout/form-coupon.php:34
+msgid "Coupon code"
+msgstr ""
+
+#: woocommerce/checkout/form-coupon.php:38
+msgid "Apply coupon"
+msgstr ""
+
+#: woocommerce/checkout/form-login.php:26
+msgid "Returning customer?"
+msgstr ""
+
+#: woocommerce/checkout/form-login.php:26
+msgid "Click here to login"
+msgstr ""
+
+#: woocommerce/checkout/form-login.php:32
+msgid ""
+"If you have shopped with us before, please enter your details below. If you are a new "
+"customer, please proceed to the Billing section."
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:30 woocommerce/myaccount/form-login.php:64
+msgid "Login"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:32 woocommerce/myaccount/form-login.php:106
+msgid "Register"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:47
+msgid "Username or email address"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:58
+msgid "Remember me"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:60
+msgid "Lost your password?"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:82
+msgid "Username"
+msgstr ""
+
+#: woocommerce/myaccount/form-login.php:89
+msgid "Email address"
+msgstr ""
+
+#: woocommerce/single-product/product-image.php:56
+msgid "Awaiting product image"
+msgstr ""
+
+#: woocommerce/single-product/related.php:27
+msgid "Related products"
+msgstr ""
+
+#: woocommerce/single-product/up-sells.php:26
+msgid "You may also like&hellip;"
+msgstr ""

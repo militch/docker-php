@@ -1,0 +1,83 @@
+@import "compass";
+/*------------------------------------------------------------------
+Foundation
+*/
+@import 'settings';
+@import 'foundation';
+@include foundation-global-styles;
+@include foundation-typography;
+@include foundation-flex-grid;
+@include foundation-responsive-embed;
+@include foundation-visibility-classes;
+@include foundation-flex-classes;
+
+/*------------------------------------------------------------------
+Variables
+*/
+@import "variables";
+
+/*------------------------------------------------------------------
+Utilities
+*/
+@import "utilities.scss";
+@import "icons.scss";
+
+/*------------------------------------------------------------------
+Structure
+*/
+@import "structure.scss";
+
+/*------------------------------------------------------------------
+Header
+*/
+@import "header/subheader.scss";
+@import "header/header.scss";
+@import "header/full-menu.scss";
+@import "header/header-items.scss";
+@import "header/mobile-menu.scss";
+
+/*------------------------------------------------------------------
+Blog.
+*/
+@import "blog/posts.scss";
+@import "blog/article.scss";
+@import 'blog/comments.scss';
+@import 'blog/forms.scss';
+@import 'widgets.scss';
+@import 'pagination.scss';
+
+/*------------------------------------------------------------------
+WP-Specific
+*/
+@import "wpspecific.scss";
+@import "gutenberg.scss";
+
+/*------------------------------------------------------------------
+Shortcodes
+*/
+@import "index.scss";
+
+/*------------------------------------------------------------------
+Plugins
+*/
+@import "plugins/plugin-slick.scss";
+@import "plugins/plugin-mfp.scss";
+@import "plugins/plugin-pswp.scss";
+
+/*------------------------------------------------------------------
+WooCommerce
+*/
+@import "woocommerce/woocommerce-general.scss";
+@import "woocommerce/woocommerce-products.scss";
+@import "woocommerce/woocommerce-categories.scss";
+@import "woocommerce/woocommerce-single.scss";
+@import "woocommerce/woocommerce-myaccount.scss";
+@import "woocommerce/woocommerce-cart.scss";
+@import "woocommerce/woocommerce-checkout.scss";
+@import "woocommerce/woocommerce-wishlist.scss";
+
+/*------------------------------------------------------------------
+Footer
+*/
+@import "paymentfont.scss";
+@import "footer.scss";

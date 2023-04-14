@@ -1,0 +1,176 @@
+@import "compass";
+/*------------------------------------------------------------------
+Variables
+*/
+@import "variables";
+
+/*------------------------------------------------------------------
+Utilities
+*/
+@import "utilities.scss";
+@import "icons.scss";
+
+// Products block
+@import "woocommerce/woocommerce-products.scss";
+
+// Gutenberg.
+.wp-block {
+	max-width: 1320px;
+	padding: 0 15px;
+	color: #5a5958;
+	&[data-align="full"] {
+		max-width: none;
+	}
+}
+
+// Gutenberg Product Grid.
+.wc-block-grid__products {
+	margin: 0 -15px;
+	.wc-block-grid__product {
+		border-left-width: 15px;
+		border-right-width: 15px;
+		border-bottom-width: 0;
+
+		.wc-block-grid__product-onsale {
+			position: absolute;
+		  color: #fff;
+		  top: 18px;
+		  left: 18px;
+			right: auto;
+		  display: flex;
+		  align-items: center;
+		  justify-content: center;
+		  text-align: center;
+		  font-size: 12px;
+		  font-weight: 400;
+		  z-index: 20;
+		  text-transform: none;
+		  margin: 0 !important;
+		  border: 0;
+		  border-radius: 15px;
+		  line-height: 1;
+		  pointer-events: none;
+		  height: 30px;
+		  padding: 0 15px;
+		  background: $accent;
+		}
+	}
+	.wc-block-grid__product-add-to-cart {
+
+		.add_to_cart_button {
+			&:after {
+				display: none !important;
+			}
+		}
+
+	}
+
+}
+
+// Latest Posts.
+.wp-block-latest-posts.is-grid {
+	margin: 0 -15px;
+
+	li {
+		padding: 0 15px;
+		margin: 0 0 30px;
+		width: 100%;
+	}
+	.wp-block-latest-posts__featured-image {
+    margin-bottom: 20px;
+		line-height: 0;
+  }
+  a {
+    font-size: 14px;
+    text-transform: uppercase;
+    font-weight: 600;
+		display: block;
+		line-height: 1.4;
+  }
+  .wp-block-latest-posts__post-date {
+    font-size: 12px;
+    text-transform: uppercase;
+    color: $accent;
+		opacity: 0.7;
+		margin-top: 5px;
+  }
+	@include min-break(600px) {
+
+		&.columns-2 li {
+			width: 50%;
+		}
+
+		&.columns-3 li {
+			width: calc(100% / 3);
+		}
+
+		&.columns-4 li {
+			width: 25%;
+		}
+
+		&.columns-5 li {
+			width: 20%;
+		}
+
+		&.columns-6 li {
+			width: calc(100% / 6);
+		}
+	}
+}
+
+.wp-block-button__link {
+	font-size: 13px;
+  font-weight: 400;
+}
+
+// Image block
+.wp-block-image {
+	>div {
+		line-height: 0;
+	}
+	figcaption {
+    display: block;
+		text-align: left;
+    margin: 0;
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 1;
+    color: #272525;
+    padding: 13px 0;
+    border-bottom: 1px solid #eee;
+	}
+}
+
+// Quote block.
+q {
+	font-size: 24px;
+	font-weight: 500;
+	color: $black;
+	line-height: 1.4;
+	margin: 0;
+}
+.wp-block-quote {
+	position: relative;
+	clear: both;
+	border: 0 !important;
+	padding: 0 10%;
+	margin: 40px 0;
+	p {
+		text-rendering: auto;
+		@extend q;
+		.post-content & {
+			@extend q;
+		}
+	}
+	cite {
+		margin-top: 20px;
+	}
+}
+
+// Video Embed.
+.wp-block-embed {
+	figcaption {
+		text-align: left;
+		font-size: 16px;
+	}
+}

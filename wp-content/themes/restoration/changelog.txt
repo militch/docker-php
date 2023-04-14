@@ -1,0 +1,102 @@
+*** Restoration changelog ***
+
+2023-01-13 - version 1.2.4
+* Fixes WooCommerce outdated template notices
+
+2022-11-04 - version 1.2.3
+* Fixes WooCommerce outdated template notices
+
+2022-10-20 - version 1.2.2
+* Adds support for password protected posts and pages
+
+2022-09-15 - version 1.2.1
+* Removes default WooCommerce styling
+
+2022-09-14 - version 1.2.0
+* PHP 8.0 Compatibility fixes
+
+
+2022-03-24 - version 1.1.10
+* Fixes double click issue on Product Categories submenu arrows.
+
+2022-03-24 - version 1.1.9
+* Fixes styling issues on single product pages
+
+
+2022-02-10 - version 1.1.8
+* PHP 8.0 compatibility Fixes
+
+2022-01-03 - version 1.1.7
+* Gutenberg Align Full Changes
+* Fixes for Kirki v4.0
+
+
+2021-09-07 - version 1.1.6
+* Fixes Product Carousels
+* Performance Improvements
+* Gift Message for WooCommerce compatibility
+
+2021-08-16 - version 1.1.5
+* Fixes Product Carousels
+* Performance Improvements
+* Gift Message for WooCommerce compatibility
+
+2021-07-19 - version 1.1.4
+* Fixes Related / Up-Sell / Cross Sell product grids
+* Fixes Product Image Lightbox icon positions
+
+2021-07-07 - version 1.1.3
+* Removes WooCommerce template override
+* Product Stars look correctly in Gutenberg
+
+2021-06-30 - version 1.1.2
+* Added Support for Elementor Pro
+* Added Accent Color - 2 Customizer setting
+* Updated language file
+
+2021-05-19 - version 1.1.1
+* Added Support for submenus in Secondary Menu inside Mobile Menus
+
+2021-03-18 - version 1.1.0
+* Added Gutenberg patterns for homepage, about and contact pages
+
+2021-03-11 - version 1.0.9
+* Fixes Accordion icon not changing
+* Fixes Sub - Sub level product category widget toggles
+* Minor fix for Cart widget
+
+2021-01-28 - version 1.0.8
+* Minor fix for WC Points & Rewards plugin
+
+2021-01-07 - version 1.0.7
+* Fixes outdated WooCommerce file for category file
+* Adds compatibility for Product addons
+
+2020-12-29 - version 1.0.6
+* Improves Dokan compatibility
+* Updated JS libraries
+* Minor fixes
+
+2020-12-18 - version 1.0.5
+* Improves Gutenberg Cart & Checkout blocks
+* Improves Gutenberg Reviews block
+
+2020-12-01 - version 1.0.4
+* Added Notice for Kirki in the footer
+* Fix for checkout page on Firefox
+
+2020-11-06 - version 1.0.3
+* Fixes Notices in WP Admin
+* Fixes 4 column layout of Gutenberg Product Category grid
+* Secondary Menu area now support dropdown
+
+2020-10-17 - version 1.0.2
+* Fixes Cart page styling
+* Fixes php notices from custom Gutenberg elements
+
+2020-09-29 - version 1.0.1
+* Minor fix for product lightboxes
+* Improves compatibility for WC Points & Rewards plugin
+
+2020-09-20 - version 1.0.0
+* Initial release

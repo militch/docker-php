@@ -1,0 +1,79 @@
+.thb-accordion {
+	display: block;
+
+	.vc_tta-panel {
+		border-bottom: 1px solid rgba(0,0,0,0.13);
+		font-size: 16px;
+
+		p {
+      font-size: inherit;
+    }
+		&.active {
+			.vc_tta-panel-heading h4 a {
+				opacity: 1;
+
+				&:after,
+				&:before {
+					background: $black;
+				}
+				&:after {
+					@include transform(translateY(-50%) scale(1,0));
+				}
+			}
+		}
+		&:first-child {
+			border-top: 1px solid rgba(0,0,0,0.13);
+		}
+	}
+	.vc_tta-panel-heading {
+		h4 {
+			display: block;
+			margin: 0;
+			line-height: 1;
+			font-size: 16px;
+
+			a {
+				display: block;
+				position: relative;
+				padding: 23px 0;
+				color: $black;
+
+				&:after,
+				&:before {
+					content: '';
+					display: block;
+					position: absolute;
+					margin-right: 10px;
+					top: 50%;
+
+					right: 0;
+				}
+
+				&:after {
+					width: 1px;
+					height: 13px;
+					right: 6px;
+					background: rgba($black, 0.6);
+					transform-origin: center;
+					@include transform(translateY(-50%) scale(1,1));
+					@extend .linear-quick-transition;
+				}
+				&:before {
+					width: 13px;
+					height: 1px;
+					@include translateY(-50%);
+					background: rgba($black, 0.6);
+				}
+			}
+		}
+	}
+	.vc_tta-panel-body {
+		display: none;
+		padding-bottom: 30px;
+		font-size: 14px;
+
+		>*:last-child {
+			margin-bottom: 0;
+		}
+	}
+}

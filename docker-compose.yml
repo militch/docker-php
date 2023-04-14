@@ -1,19 +1,36 @@
 version: "3.9"
+
 services:
-  php-fpm:
+  wordpress:
+    depends_on: 
+      - mysql
     ports:
-      - "9001:9000"
+      - "8011:80"
     build:
       context: .
       args: 
         - "CNBUILD="
     volumes:
-      - "/var/www/html:/var/www/html"
+      - "wordpress:/var/www/html"
+    environment:
+      - WORDPRESS_DB_NAME=wordpress
+      - WORDPRESS_DB_USER=wordpress
+      - WORDPRESS_DB_PASSWORD=wordpress
+      - WORDPRESS_DB_HOST=mysql
 
-  php-fpm2:
-    image: php:7.4-fpm
+  mysql:
+    image: "mysql:8"
     ports:
-      - "9000:9000"
+      - "3306"
+    command: --default-authentication-plugin=mysql_native_password
     volumes:
-      - "/var/www/html:/var/www/html"
+      - "db:/var/lib/mysql"
+    environment: 
+      - MYSQL_ROOT_PASSWORD=wordpress
+      - MYSQL_USER=wordpress
+      - MYSQL_PASSWORD=wordpress
+      - MYSQL_DATABASE=wordpress
 
+volumes:
+  wordpress:
+  db:

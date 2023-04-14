@@ -1,0 +1,33 @@
+$transition: cubic-bezier(0.104,0.204,0.492,1);
+$break-small: 768px;
+$break-medium: 1068px;
+$break-large: 1440px;
+
+
+$black: #272525;
+$border: #eee;
+$border-dark: #e0e0e0;
+$accent: #5a5958;
+$accent2: #f9bc7d;
+$accent3: #db8556;
+$form-border: #e0e0e0;
+
+$social: (
+	facebook: #3b5998,
+	linkedin: #007bb6,
+	twitter: #00aced,
+	instagram: #3f729b,
+	youtube: #e52d27,
+	vkontakte: #45668e,
+	pinterest: #bd081c,
+	whatsapp: #25d366,
+	jetpack-whatsapp: #25d366,
+	medium: #00ab6c,
+	email: #9b9b9b,
+	reddit: #ff4500,
+	vimeo: #1ab7ea,
+	skype: #00aff0,
+	telegram: #0088cc,
+	tumblr: #35465c,
+	pocket: #ef4056
+);

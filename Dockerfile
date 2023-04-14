@@ -113,6 +113,7 @@ RUN set -eux; \
     --enable-gd \
     --with-jpeg \
     --enable-redis \
+	--enable-opcache \
     --enable-intl \
     --enable-mbregex \
     --with-pdo-mysql \
@@ -154,16 +155,88 @@ RUN set -eux; \
     mkdir -p "$PHPCONFIG_DIR/conf.d"; \
 	{ \
 		echo 'fastcgi.logging = Off'; \
-	} > "$PHPCONFIG_DIR/conf.d/docker-fpm.ini"
-
-COPY docker_php_entrypoint.sh /usr/local/bin
-RUN chmod +x /usr/local/bin/docker_php_entrypoint.sh
-ENTRYPOINT ["docker_php_entrypoint.sh"]
-
-STOPSIGNAL SIGQUIT
-EXPOSE 9000
+	} | tee conf.d/docker-fpm.ini; \
+	{ \
+		echo 'opcache.memory_consumption=128'; \
+		echo 'opcache.interned_strings_buffer=8'; \
+		echo 'opcache.max_accelerated_files=4000'; \
+		echo 'opcache.revalidate_freq=2'; \
+	} | tee conf.d/opcache-recommended.ini; \
+	{ \
+		echo 'error_reporting = E_ERROR | E_WARNING | E_PARSE | E_CORE_ERROR | E_CORE_WARNING | E_COMPILE_ERROR | E_COMPILE_WARNING | E_RECOVERABLE_ERROR'; \
+		echo 'display_errors = Off'; \
+		echo 'display_startup_errors = Off'; \
+		echo 'log_errors = On'; \
+		echo 'error_log = /dev/stderr'; \
+		echo 'log_errors_max_len = 1024'; \
+		echo 'ignore_repeated_errors = On'; \
+		echo 'ignore_repeated_source = Off'; \
+		echo 'html_errors = Off'; \
+	 } | tee conf.d/error-logging.ini
 
 WORKDIR /var/www/html
 
-CMD ["php-fpm", "-c /etc/php/php-fpm.conf"]
+ENV WORDPRESS_URL="https://wordpress.org/wordpress-6.2.tar.gz"
+
+RUN set -eux; \
+    curl -sL -o- "${WORDPRESS_URL}" | tar -xz --strip-components 1; \
+    chown -R www-data:www-data /var/www/html; \
+    chmod -R 1777 wp-content
+
+COPY --chown=www-data:www-data wp-config.php .
+COPY --chown=www-data:www-data wp-content/plugins/jetpack/ wp-content/plugins/jetpack/
+COPY --chown=www-data:www-data wp-content/plugins/woocommerce/ wp-content/plugins/woocommerce/
+COPY --chown=www-data:www-data wp-content/themes/restoration/ wp-content/themes/restoration/
+
+
+RUN set -eux; \
+    apk add --no-cache \
+    nginx
+
+COPY nginx.conf /etc/nginx/nginx.conf
+COPY nginx-default.conf /etc/nginx/http.d/default.conf
+
+RUN set -eux; \
+    apk add --no-cache \
+    supervisor
+
+RUN set -eux; \
+    mkdir -p /etc/supervisor.d/; \
+    { \
+        echo '[program:php-fpm]'; \
+        echo 'command = /usr/local/sbin/php-fpm --force-stderr --nodaemonize --fpm-config /etc/php/php-fpm.conf'; \
+        echo 'autostart=true'; \
+        echo 'autorestart=true'; \
+        echo 'priority=5'; \
+        echo 'stdout_events_enabled=true'; \
+        echo 'stderr_events_enabled=true'; \
+        echo 'stdout_logfile=/dev/stdout'; \
+        echo 'stdout_logfile_maxbytes=0'; \
+        echo 'stderr_logfile=/dev/stderr'; \
+        echo 'stderr_logfile_maxbytes=0'; \
+        echo 'stopsignal=QUIT'; \
+	} | tee /etc/supervisor.d/php-fpm.ini; \
+    { \
+		echo '[program:nginx]'; \
+        echo 'command=/usr/sbin/nginx -g "daemon off; error_log /dev/stderr info;"'; \
+        echo 'autostart=true'; \
+        echo 'autorestart=true'; \
+        echo 'priority=10'; \
+        echo 'stdout_events_enabled=true'; \
+        echo 'stderr_events_enabled=true'; \
+        echo 'stdout_logfile=/dev/stdout'; \
+        echo 'stdout_logfile_maxbytes=0'; \
+        echo 'stderr_logfile=/dev/stderr'; \
+        echo 'stderr_logfile_maxbytes=0'; \
+        echo 'stopsignal=QUIT'; \
+	} | tee /etc/supervisor.d/nginx.ini;
+
+COPY docker_entrypoint.sh /usr/local/bin
+RUN chmod +x /usr/local/bin/docker_entrypoint.sh
+ENTRYPOINT ["docker_entrypoint.sh"]
+
+EXPOSE 9000
+EXPOSE 80
+
+CMD ["supervisord", "-n"]
 
