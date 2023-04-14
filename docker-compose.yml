@@ -2,6 +2,8 @@ version: "3.9"
 
 services:
   wordpress:
+    env_file:
+      - "./.env"
     depends_on: 
       - mysql
     ports:
@@ -12,24 +14,16 @@ services:
         - "CNBUILD="
     volumes:
       - "wordpress:/var/www/html"
-    environment:
-      - WORDPRESS_DB_NAME=wordpress
-      - WORDPRESS_DB_USER=wordpress
-      - WORDPRESS_DB_PASSWORD=wordpress
-      - WORDPRESS_DB_HOST=mysql
 
   mysql:
     image: "mysql:8"
+    env_file:
+      - "./.env"
     ports:
       - "3306"
     command: --default-authentication-plugin=mysql_native_password
     volumes:
       - "db:/var/lib/mysql"
-    environment: 
-      - MYSQL_ROOT_PASSWORD=wordpress
-      - MYSQL_USER=wordpress
-      - MYSQL_PASSWORD=wordpress
-      - MYSQL_DATABASE=wordpress
 
 volumes:
   wordpress:
