@@ -155,6 +155,9 @@ RUN set -eux; \
     mkdir -p "$PHPCONFIG_DIR/conf.d"; \
 	{ \
 		echo 'fastcgi.logging = Off'; \
+		echo 'max_execution_time = 0'; \
+		echo 'post_max_size = 120M'; \
+		echo 'upload_max_filesize = 120M'; \
 	} | tee conf.d/docker-fpm.ini; \
 	{ \
 		echo 'opcache.memory_consumption=128'; \
@@ -173,20 +176,6 @@ RUN set -eux; \
 		echo 'ignore_repeated_source = Off'; \
 		echo 'html_errors = Off'; \
 	 } | tee conf.d/error-logging.ini
-
-WORKDIR /var/www/html
-
-ENV WORDPRESS_URL="https://wordpress.org/wordpress-6.2.tar.gz"
-
-RUN set -eux; \
-    curl -sL -o- "${WORDPRESS_URL}" | tar -xz --strip-components 1; \
-    chown -R www-data:www-data /var/www/html; \
-    chmod -R 1777 wp-content
-
-COPY --chown=www-data:www-data wp-config.php .
-COPY --chown=www-data:www-data wp-content/plugins/jetpack/ wp-content/plugins/jetpack/
-COPY --chown=www-data:www-data wp-content/plugins/woocommerce/ wp-content/plugins/woocommerce/
-COPY --chown=www-data:www-data wp-content/themes/restoration/ wp-content/themes/restoration/
 
 
 RUN set -eux; \
@@ -239,4 +228,20 @@ EXPOSE 9000
 EXPOSE 80
 
 CMD ["supervisord", "-n"]
+
+WORKDIR /var/www/html
+
+ENV WORDPRESS_URL="https://wordpress.org/wordpress-6.2.tar.gz"
+
+RUN set -eux; \
+    curl -sL -o- "${WORDPRESS_URL}" | tar -xz --strip-components 1; \
+    chown -R www-data:www-data /var/www/html; \
+    chmod -R 1777 wp-content
+
+COPY --chown=www-data:www-data wp-config.php .
+COPY --chown=www-data:www-data wp-content/plugins/jetpack/ wp-content/plugins/jetpack/
+COPY --chown=www-data:www-data wp-content/plugins/woocommerce/ wp-content/plugins/woocommerce/
+COPY --chown=www-data:www-data wp-content/themes/restoration/ wp-content/themes/restoration/
+COPY --chown=www-data:www-data wp-content/plugins/woocommerce-pixel-manager/ wp-content/plugins/woocommerce-pixel-manager/
+COPY --chown=www-data:www-data wp-content/plugins/kirki/ wp-content/plugins/kirki/
 
