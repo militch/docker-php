@@ -155,7 +155,7 @@ RUN set -eux; \
     mkdir -p "$PHPCONFIG_DIR/conf.d"; \
 	{ \
 		echo 'fastcgi.logging = Off'; \
-		echo 'max_execution_time = 0'; \
+		echo 'max_execution_time = 180'; \
 		echo 'post_max_size = 120M'; \
 		echo 'upload_max_filesize = 120M'; \
 	} | tee conf.d/docker-fpm.ini; \
