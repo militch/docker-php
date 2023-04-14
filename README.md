@@ -3,7 +3,7 @@
 ### 快速启动
 
 ```bash
-docker compose up --build -d
+docker compose up -d
 ```
 
 ### 自定义编译
