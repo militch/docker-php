@@ -1,0 +1,45 @@
+.products {
+  .product-category {
+    .thb-product-category-image {
+      overflow: hidden;
+      line-height: 1;
+    }
+    .thb-category-link {
+      display: block;
+      margin-bottom: auto;
+      text-align: center;
+      width: 100%;
+			background: #f8f8f8;
+			text-align: center;
+			line-height: 1;
+			height: 100%;
+			padding: 15px;
+			@extend .quick-transition;
+	    @include min-break($break-small) {
+				padding: 25px;
+			}
+      img {
+        width: 100%;
+      }
+    }
+    .count {
+      background: none;
+    }
+    .thb-product-category-image {
+      margin-bottom: 10px;
+    }
+    .woocommerce-loop-category__title {
+			font-size: 14px;
+			color: #5a5958;
+			margin: 0;
+      .count {
+        margin-left: 5px;
+      }
+    }
+		&:hover {
+			.thb-category-link {
+				background: rgba($accent3,0.1);
+			}
+		}
+  }
+}

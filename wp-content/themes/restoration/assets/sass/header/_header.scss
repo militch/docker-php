@@ -1,0 +1,207 @@
+.logo-holder {
+  display: inline-flex;
+  flex-shrink: 0;
+  margin: 0 auto;
+	max-width: 100%;
+  .logolink {
+    display: inline-flex;
+    position: relative;
+    align-items: center;
+  }
+  .logoimg {
+    max-height: 16px;
+    object-fit: contain;
+  }
+	.logo-text {
+    font-size: 26px;
+		font-weight: 600;
+  }
+}
+.header {
+  display: flex;
+	align-items: center;
+  flex-wrap: wrap;
+  top: 0;
+  left: 0;
+	position: relative;
+	z-index: 30;
+	width: 100%;
+	user-select: none;
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+  @extend .quick-transition;
+
+  // Header Margins
+  .woocommerce-account &,
+  .woocommerce-cart &,
+  .woocommerce-checkout & {
+    margin-bottom: 20px;
+
+    @include min-break($break-medium) {
+      margin-bottom: 40px;
+    }
+  }
+	.logo-menu-wrapper {
+		display: inline-flex;
+	}
+  .header-logo-row {
+    width: 100%;
+    padding: 10px 0;
+		position: relative;
+		background: rgba(255,255,255,0.8);
+		z-index: 5;
+
+    >.row {
+  		width: 100%;
+
+			padding: 0 15px;
+  		>.columns {
+  			display: flex;
+  			align-items: center;
+				padding: 0;
+  		}
+			@include min-break($break-small) {
+				padding: 0 50px;
+			}
+  	}
+  }
+  &.header-full-width {
+    .header-logo-row>.row {
+      max-width: 100%;
+      padding: 0 20px;
+    }
+  }
+	.mobile-toggle-holder {
+		@include min-break($break-medium) {
+			display: none;
+		}
+	}
+  .thb-navbar {
+    display: none;
+    @include min-break($break-medium) {
+      display: inline-flex;
+    }
+  }
+  @include min-break($break-medium) {
+    .header-logo-row {
+      padding: 5px 0;
+    }
+  }
+  &.fixed {
+    position: fixed;
+    z-index: 40;
+		@extend .admin-style;
+    @include transition(transform .5s $transition);
+
+    &.headroom--not-top {
+      &.headroom--unpinned {
+        transform: translateY(0%);
+      }
+      &.headroom--pinned {
+        transform: translateY(0%);
+      }
+    }
+		&:after {
+			opacity: 0;
+		}
+    &:before {
+    	content: '';
+    	display: block;
+    	position: absolute;
+    	top: 0;
+    	left: 0;
+    	width: 100%;
+    	height: 100%;
+    	z-index: -1;
+    	opacity: 1;
+      pointer-events: none;
+    	@extend .quick-transition;
+    }
+    .fixed-logo-holder {
+      display: inline-flex;
+      align-items: center;
+
+      .mobile-toggle-holder {
+        display: inline-flex;
+        @include min-break($break-medium) {
+          display: none;
+        }
+      }
+    }
+    .full-menu {
+      display: none;
+      margin: 0 auto;
+      @include min-break($break-medium) {
+        display: inline-flex;
+      }
+    }
+
+    &.thb-fixed-shadow-style1:before {
+			@include box-shadow(0 2px 5px rgba(0,0,0,0.06));
+		}
+		&.thb-fixed-shadow-style2:before {
+			@include box-shadow(0 9px 38px rgba(0,0,0,0.05), 0 5px 12px rgba(0,0,0,0.1));
+		}
+		&.thb-fixed-shadow-style3:before {
+			@include box-shadow(0 19px 38px rgba(0,0,0,0.1), 0 5px 22px rgba(0,0,0,0.15));
+		}
+    &.light-header {
+      border-bottom: 1px solid #eee;
+    }
+  } // .fixed
+	&:after {
+		content: '';
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		background: #eee;
+		height: 1px;
+		opacity: 1;
+		margin: 0 auto;
+		@extend .quick-transition;
+		@include min-break($break-small) {
+			left: 50px;
+			right: 50px;
+			max-width: 1290px;
+		}
+		.home & {
+			display: none;
+		}
+	}
+	.thb-header-inline-search {
+		position: absolute;
+		top: 100%;
+		left: 0;
+		right: 0;
+		z-index: 4;
+		transform-origin: left top;
+		@include scale(1,0);
+		@include min-break($break-small) {
+			left: 50px;
+			right: 50px;
+		}
+		.thb-header-inline-search-inner {
+			max-width: 1290px;
+			margin: 0 auto;
+			background: $accent;
+		}
+		.woocommerce-product-search {
+			border: 0;
+			padding: 0;
+			max-width: none;
+			button {
+				display: none;
+			}
+			input {
+				color: #fff;
+				text-align: center;
+				height: 50px;
+				font-size: 16px;
+				@include input-placeholder {
+					color: #dad7d5;
+				}
+			}
+		}
+	}
+}

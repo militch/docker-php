@@ -1,0 +1,73 @@
+/**
+ * #.# Editor Styles
+ *
+ * CSS for just Backend enqueued after style.scss
+ * which makes it higher in priority.
+ */
+
+.wp-block-fuel-themes-thb-iconbox {
+	.thb-iconbox {
+		display: flex;
+
+		.thb-iconbox-image {
+			margin-right: 30px;
+			flex-shrink: 0;
+			width: 60px;
+
+			.components-button {
+				padding: 0;
+				width: 60px;
+				height: 60px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+		}
+		.thb-iconbox-inner {
+			display: flex;
+			align-items: flex-start;
+			text-align: left;
+			flex-direction: column;
+			justify-content: center;
+			p,
+			h6 {
+				margin: 0;
+			}
+			h6 {
+				font-size: 14px;
+				font-weight: 600;
+				margin-bottom: 4px;
+			}
+			p {
+				font-size: 14px;
+			}
+		}
+	}
+	&.center {
+		.thb-iconbox {
+			flex-direction: column;
+			.thb-iconbox-image {
+				margin: 0 auto 30px;
+			}
+			.thb-iconbox-inner {
+				align-items: center;
+				text-align: center;
+			}
+		}
+
+	}
+	&.right {
+		.thb-iconbox {
+			flex-direction: row-reverse;
+			.thb-iconbox-image {
+				margin-right: 0;
+				margin-left: 30px;
+			}
+			.thb-iconbox-inner {
+				align-items: flex-end;
+				text-align: right;
+			}
+		}
+
+	}
+}

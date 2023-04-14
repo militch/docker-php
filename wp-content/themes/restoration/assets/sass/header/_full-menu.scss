@@ -1,0 +1,194 @@
+.thb-full-menu {
+  display: inline-flex;
+	margin: 0;
+	padding: 0;
+	list-style: none;
+	line-height: 1;
+	flex-wrap: wrap;
+
+  &>.menu-item {
+		display: inline-flex;
+		& + .menu-item {
+			margin-left: 22px;
+
+			.rtl & {
+				margin-left: 0;
+				margin-right: 22px;
+			}
+		}
+
+		>a {
+			min-height: 45px;
+      display: flex;
+      align-items: center;
+      font-size: 14px;
+      font-weight: 400;
+			color: $accent;
+      .header.fixed & {
+        align-items: center;
+      }
+			&:hover {
+				color: $accent3;
+			}
+		}
+	}
+	.menu-item {
+		margin: 0;
+		white-space: nowrap;
+
+    .thb-menu-label {
+      display: flex;
+      align-items: center;
+    }
+		&.current-menu-item>a {
+			color: $accent3;
+		}
+		&.menu-item-has-children {
+			position: relative;
+
+			&>a {
+				&:after {
+			    display: inline-flex;
+          font-family: "peakshops";
+					content: "\e800";
+			    margin-left: 8px;
+			    font-size: 16px;
+					font-weight: 400;
+			    .rtl & {
+			    	margin-left: 0;
+			    	margin-right: 8px;
+			    }
+				}
+			}
+		}
+	}
+	.sub-menu {
+		@extend .thb-dropdown-style;
+    &.has_bg {
+      background-repeat: no-repeat;
+      background-position: right center;
+      background-size: contain;
+      padding-right: 220px;
+
+      .rtl & {
+        padding-right: 0;
+        padding-left: 220px;
+        background-position: left center;
+      }
+    }
+		.rtl & {
+			text-align: right;
+			left: auto;
+			right: -30px;
+		}
+		li {
+			display: block;
+			padding: 0 25px;
+			font-size: 12px;
+			line-height: 1.1;
+			margin-bottom: 5px;
+			&:last-child {
+				margin-bottom: 0;
+			}
+			a {
+				display: inline-flex;
+				padding: 5px 0;
+				opacity: 0;
+        font-size: inherit;
+        font-weight: 400;
+        align-items: center;
+        justify-content: space-between;
+				will-change: opacity;
+        position: relative;
+        color: #dad7d5;
+        @extend .mid-transition;
+
+        sup {
+          margin-left: 5px;
+        }
+				span {
+					will-change: transform;
+					@include transition(transform .5s $transition);
+					@include translateX(0);
+					margin-right: auto;
+
+					.rtl & {
+						margin-right: 0;
+						margin-left: auto;
+					}
+				}
+        &:hover {
+          color: #fff;
+          >span {
+						@include translateX(10px);
+
+						.rtl & {
+							@include translateX(-10px);
+						}
+					}
+        }
+        &.thb-menu-image-link {
+          display: block;
+
+          &:before,
+          &:after {
+            content: none;
+          }
+        }
+			}
+			&.menu-item-has-children {
+				position: relative;
+				>a:after {
+          font-family: "peakshops";
+					content: "\e801";
+          font-size: 14px;
+          line-height: 14px;
+          vertical-align: middle;
+					width: 8px;
+          margin-left: 8px;
+					.rtl & {
+						@include rotateY(180);
+            margin-left: 0;
+            margin-right: 12px;
+					}
+				}
+			}
+		}
+		.sub-menu {
+			top: -20px;
+			left: 100%;
+			z-index: 10;
+			.sub-menu {
+        z-index: 15;
+      }
+			.rtl & {
+				left: auto;
+				right: 100%;
+			}
+    }
+  } // .sub-menu
+
+  &.thb-currency-switcher,
+  &.thb-language-switcher {
+    >.menu-item + .menu-item {
+      margin-left: 12px;
+    }
+  }
+}
+
+.thb-dropdown-style {
+  padding: 20px 0;
+  margin: 0;
+  list-style: none;
+  background: #5a5958;
+  position: absolute;
+  z-index: 10;
+  text-align: left;
+  top: 100%;
+  left: -25px;
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 40;
+  @include backface-visibility(hidden);
+}

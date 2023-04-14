@@ -1,0 +1,136 @@
+.thb-checkout-toggle {
+  padding: 15px 20px;
+  line-height: 1;
+  display: flex;
+  background: rgba($accent,0.1);
+  margin-bottom: 10px;
+  font-weight: 500;
+  font-size: 14px;
+  a {
+    margin-left: 10px;
+    font-weight: 600;
+    color: $accent;
+  }
+  svg {
+    height: 15px;
+    width: auto;
+    margin-right: 20px;
+
+    &.thb-myaccount-icon {
+      margin-left: 4px;
+      margin-right: 24px;
+    }
+  }
+}
+form.woocommerce-checkout {
+	clear: both;
+}
+.thb-checkout-form-column {
+  @include min-break($break-small) {
+    padding-right: 45px;
+  }
+  @include min-break($break-medium) {
+    padding-right: 85px;
+  }
+  #billing_address_1_field,
+  #shipping_address_1_field {
+  	margin-bottom: 10px;
+  }
+  .col-1,
+  .col-2,
+  .woocommerce-billing-fields,
+  .woocommerce-shipping-fields,
+  .woocommerce-account-fields {
+    @extend .cf;
+  }
+  .woocommerce-billing-fields {
+    margin-bottom: 10px;
+  }
+}
+.wc_payment_methods {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  li {
+    border-top: 1px solid $border;
+    padding: 20px 0;
+    .input-radio {
+      margin-right: 12px;
+    }
+    label {
+      font-weight: 500;
+      margin-bottom: 0;
+    }
+    .payment_box {
+      font-size: 14px;
+      padding-left: 30px;
+      padding-top: 15px;
+      * {
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}
+.woocommerce-terms-and-conditions-wrapper {
+  .woocommerce-privacy-policy-text {
+    font-size: 12px;
+
+    a {
+      color: $accent;
+
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+  .input-checkbox {
+    margin-right: 15px;
+  }
+  label {
+    font-size: 14px;
+
+    a {
+      color: $accent;
+
+      &:hover {
+        color: $black;
+      }
+    }
+  }
+}
+#place_order {
+  width: 100%;
+  text-transform: uppercase;
+  font-size: 14px;
+  height: 55px;
+  line-height: 55px;
+}
+
+// Order.
+.woocommerce-order-overview {
+  border: 2px dashed #7a7a7a;
+  list-style: none;
+  padding: 4%;
+  margin: 0 0 50px;
+  color: $black;
+}
+.woocommerce-order-details {
+  .woocommerce-column__title {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  .woocommerce-order-details__title {
+    font-size: 24px;
+    margin-bottom: 30px;
+  }
+  .shop_table.order_details {
+    margin-bottom: 30px;
+    tbody tr td,
+    tfoot tr th,
+    tfoot tr td {
+      padding: 15px 0;
+    }
+  }
+}

@@ -1,0 +1,105 @@
+.pswp__bg {
+  background-color: rgba(#fff,0.95);
+}
+.pswp__ui--fit {
+  .pswp__caption,
+  .pswp__top-bar {
+    background: rgba(#fff,0.3);
+  }
+}
+.pswp__counter {
+  color: $black;
+  opacity: 1;
+  font-weight: 400;
+  padding: 15px;
+  line-height: 1;
+  font-size: 20px;
+  @include min-break($break-small) {
+    padding: 30px;
+  }
+}
+.pswp__caption {
+  .pswp__caption__center {
+    text-align: center;
+    color: $black;
+  }
+}
+
+button.pswp__button {
+  background: none !important;
+  @extend .quick-transition;
+  .pswp--has_mouse & {
+    @extend .quick-transition;
+  }
+  span {
+    display: inline-block;
+    width: 30px;
+    height: 38px;
+    position: relative;
+    pointer-events: none;
+
+  }
+	&.pswp__button--arrow--right,
+	&.pswp__button--arrow--left {
+		&:after,
+		&:before {
+			content: '';
+			display: block;
+			background-color: $black !important;
+			height: 1px;
+			position: absolute;
+			right: 0;
+			left: auto;
+			top: 44px;
+			width: 26px;
+			transform-origin: right center;
+			@include rotateZ(45);
+		}
+		&:after {
+			@include rotateZ(-45);
+		}
+	}
+  &.pswp__button--arrow--right {
+    text-align: right;
+    right: 30px;
+    .pswp__ui--idle & {
+      @include translateX(-20px);
+    }
+  }
+  &.pswp__button--arrow--left {
+    text-align: left;
+    left: 30px;
+    .pswp__ui--idle & {
+      @include translateX(20px);
+    }
+		&:after,
+		&:before {
+			right: auto;
+			left: 0;
+			transform-origin: left center;
+		}
+  }
+}
+button.pswp__button {
+  &.pswp__button--fs {
+    display: none;
+  }
+  .pswp__top-bar & {
+    line-height: 1;
+		width: 45px;
+		height: 45px;
+		@include min-break($break-small) {
+      margin: 20px 20px 20px 0;
+    }
+		&.pswp__button--close {
+			background: url('../img/svg/arrows_remove.svg') center center no-repeat !important;
+			background-size: 35px 35px !important;
+		}
+    &.pswp__button--zoom {
+      margin-right: 0;
+			background: url('../img/svg/zoom-in.svg') 50% calc( 50% - 1px ) no-repeat !important;
+			background-size: 20px 20px !important;
+    }
+  }
+
+}
